@@ -1,0 +1,14 @@
+banc
+bureau
+cabinet
+carreau
+chaise
+classe
+cle
+coin
+couloir
+dossier
+eau
+ecole
+ecriture
+entree

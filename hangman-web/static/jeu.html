@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Hangman Web - Game</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/style_jeu.css">
+
+</head>
+<body>
+    <div class="title">
+        <h1> It's time to play a game !...</h1>
+    </div>
+    <div class="container">
+    <div class="all"> 
+        <div class="display">
+            <h2>Welcome {{.Name}}</h2>
+            Find the word : 
+            <div class="word">
+                {{.Word}}
+            </div>
+            You have {{.Attempts}} attempts left.</br>
+           You used : {{.Stock}}
+        </div>
+    <div class="form">
+        
+        <form action="/waiting" method="post" >
+            <input type="text" class="input" name="lettre" placeholder="Enter a letter or the word" ></br>
+            <button type="submit" class="choose">Choose</button>
+        </form>
+        
+        
+    </div>
+</div>
+    <div class="retry">
+        <form action="/setup" method="GET">
+            <button type="submit" class="choose">Play again</button>
+        </form>
+    </div>
+    <div class="Hangman">
+        <svg width="297" height="420" xmlns="http://www.w3.org/2000/svg">
+            <title>Hangman</title>
+           
+            <g>
+             <title>Layer 1</title>
+
+             {{if le .Attempts 9}}
+             <rect id="svg_1" height="20" width="249" y="311" x="32.83499" stroke="#000" fill="#000000"/>
+             {{end}}
+             {{if le .Attempts 8}}
+             <rect id="svg_2" height="223" width="12" y="91" x="53.83499" stroke="#000" fill="#000000"/>
+             {{end}}
+             {{if le .Attempts 7}}
+             <rect id="svg_4" height="14" width="206" y="79" x="52.83499" stroke="#000" fill="#000000"/>
+             {{end}}
+             {{if le .Attempts 6}}
+             <rect transform="rotate(-26.9657 92.835 104)" id="svg_3" height="12" width="80" y="98" x="52.83499" stroke="#000" fill="#000000"/>
+             {{end}}
+             {{if le .Attempts 5}}
+             <rect id="svg_6" height="50" width="3" y="93" x="173.83499" stroke="#000" fill="#000000"/>
+             <ellipse ry="20.5" rx="20" id="svg_7" cy="145.5" cx="175.83499" stroke="#000" fill="#000000"/>
+             {{end}}
+             {{if le .Attempts 4}}
+             <rect id="svg_9" height="68" width="18" y="164" x="166.83499" stroke="#000" fill="#000000"/>
+             {{end}}
+             {{if le .Attempts 3}}
+             <path transform="rotate(-46.577 198.335 195.5)" id="svg_10" d="m194.83501,169l7,0l0,53l-7,0l0,-53z" opacity="undefined" stroke="#000" fill="#000000"/>
+             {{end}}
+             {{if le .Attempts 2}}
+             <rect transform="rotate(48.6054 152.335 190.5)" id="svg_11" height="53" width="7" y="164" x="148.83499" stroke="#000" fill="#000000"/>
+             {{end}}
+             {{if le .Attempts 1}}
+             <rect transform="rotate(-2.26494 182.335 251.5)" id="svg_12" height="55" width="9" y="224" x="177.83499" stroke="#000" fill="#000000"/>
+             {{end}}
+            </g>
+           </svg>
+        </div>
+    </div>
+    <footer>
+        <img class="image2" src="assets/images/ynov.jpg" />
+        <p class="copyright"><em>All rights reserved - Lyon Ynov Campus</em></p>
+    </footer>
+</body>
+
+</html>

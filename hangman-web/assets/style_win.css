@@ -1,0 +1,55 @@
+html,body
+{
+    
+    text-align: center;
+    background-image: linear-gradient(to right top, #c7009e, #ff1972, #ff6443, #ffa505, #e6de10);
+  display: flex;
+  flex-direction: column;
+  background-repeat: no-repeat;
+ height: 100vh;
+ 
+}
+
+p{
+    font-size: large;
+    
+}
+a{
+    color: #000000;
+}
+a:hover{
+   color : white;
+}
+
+  
+  button {
+    margin: 50px;
+    font-family: inherit;  
+    align-self: center;
+
+  }
+  
+  .choose {
+    color: black;
+    font-size: 20px;
+    font-weight: 200;
+    letter-spacing: 1px;
+    padding: 13px 50px 13px;
+    outline: 0;
+    border: 1px solid black;
+    cursor: pointer;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 30px;
+    margin-top: 150px;
+  }
+  
+
+
+
+
+
+
+  
+  
+ 
